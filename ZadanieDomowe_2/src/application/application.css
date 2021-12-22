@@ -1,0 +1,28 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.root
+{
+	-fx-font-family: "Times New Roman";
+	-fx-spacing: 20px;
+	-fx-alignment: center ;
+	-fx-padding: 20;
+}
+.main{
+	-fx-border-color: black;
+	-fx-border-insets:3; 
+	-fx-border-width:1
+}
+
+.table{
+	-fx-border-color: black;
+	-fx-border-insets:3; 
+	-fx-border-width: 1;	
+}
+.vboxStyle{
+	-fx-alignment: CENTER ;
+}
+.hboxButtonStyle{
+	-fx-alignment: CENTER ;
+}
+.labelStyle{
+	-fx-text-alignment: CENTER ;
+}
