@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.web.WebView?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="application.SampleController">
+   <children>
+      <Pane layoutX="7.0" prefHeight="367.0" prefWidth="318.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="23.0" prefWidth="113.0" text="Label">
+               <graphic>
+                  <Circle fill="DODGERBLUE" radius="11.0" stroke="BLACK" strokeType="INSIDE" />
+               </graphic>
+            </Label>
+            <WebView layoutX="14.0" layoutY="37.0" prefHeight="247.0" prefWidth="290.0" />
+            <TextField layoutY="339.0" prefHeight="28.0" prefWidth="280.0" />
+            <Circle fill="DODGERBLUE" layoutX="302.0" layoutY="351.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

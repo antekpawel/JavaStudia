@@ -104,6 +104,7 @@ public class Main extends Application {
 			mainHbox.add(vbox, 1, 0);
             
 			root.getChildren().add(mainHbox);
+			clearA();
 			
 			FileChooser fileChooser = new FileChooser();
 			fileChooser.setTitle("Wybierz zdjêcie do analizy");
@@ -193,27 +194,34 @@ public class Main extends Application {
 		}
 	}
 	
-	public void copy(MouseEvent event) {			
+	public void copy(MouseEvent event) {	
+		
 			int h = (int)event.getY();
 			int w = (int)event.getX();
 			
-			for (int i = 0; i < 41; i++) {
-				for (int j = 0; j < 41; j++) {
-					
-					Color color = reader.getColor(i - 20 + w, j - 20 + h);
-					
-					writer.setColor(i, j, Color.color(
-							color.getRed(), 
-							color.getGreen(), 
-							color.getBlue()
-							));
+			int frameSize = 22;
+			boolean cursorInImage = (h > frameSize) && (h < height - frameSize) &&
+					(w > frameSize) && (w < width - frameSize);
+			
+			if (cursorInImage){
+				for (int i = 0; i < 41; i++) {
+					for (int j = 0; j < 41; j++) {
+						
+						Color color = reader.getColor(i - 20 + w, j - 20 + h);
+						
+						writer.setColor(i, j, Color.color(
+								color.getRed(), 
+								color.getGreen(), 
+								color.getBlue()
+								));
+					}
 				}
-			}
-			
-			gcTable = canvasTable.get(iterTable).getGraphicsContext2D();
-			gcTable.drawImage(dstImage, 0, 0);
-			
-			if (iterTable < 24) iterTable++;
+				
+				gcTable = canvasTable.get(iterTable).getGraphicsContext2D();
+				gcTable.drawImage(dstImage, 0, 0);
+				
+				if (iterTable < 24) iterTable++;
+		}
 	}
 	
 	public static void main(String[] args) {
